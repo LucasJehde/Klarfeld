@@ -173,27 +173,17 @@ function initGsap() {
       );
     });
 
-    const serviceSection = document.querySelector(".services");
-    const serviceTrack = document.querySelector(".service-track");
-    const serviceWrap = document.querySelector(".service-track-wrap");
-
-    if (serviceSection && serviceTrack && serviceWrap) {
-      const distance = () => Math.max(0, serviceTrack.scrollWidth - serviceWrap.clientWidth);
-
-      gsap.to(serviceTrack, {
-        x: () => -distance(),
-        ease: "none",
-        scrollTrigger: {
-          trigger: serviceSection,
-          start: "top top+=80",
-          end: () => `+=${distance() + window.innerHeight * 0.45}`,
-          scrub: 0.7,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true
-        }
-      });
-    }
+    gsap.from(".service-row", {
+      scrollTrigger: {
+        trigger: ".services",
+        start: "top 70%"
+      },
+      autoAlpha: 0,
+      y: 18,
+      duration: 0.55,
+      ease: "power2.out",
+      stagger: 0.08
+    });
   }
 }
 
