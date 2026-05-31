@@ -1,8 +1,9 @@
 const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector("[data-menu-toggle]");
-const journeyCards = [...document.querySelectorAll(".journey-cards li")];
 
 function closeMenu() {
+  if (!header || !menuToggle) return;
+
   header.classList.remove("nav-open");
   document.body.classList.remove("menu-open");
   menuToggle.classList.remove("is-open");
@@ -10,21 +11,25 @@ function closeMenu() {
 }
 
 function scrollToAnchor(hash) {
+  if (!hash || hash === "#") return;
+
   const target = document.querySelector(hash);
   if (!target) return;
 
-  const offset = header.offsetHeight + 24;
+  const offset = (header?.offsetHeight || 0) + 24;
   const top = target.getBoundingClientRect().top + window.scrollY - offset;
 
   window.scrollTo({ top, behavior: "smooth" });
 }
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = header.classList.toggle("nav-open");
-  document.body.classList.toggle("menu-open", isOpen);
-  menuToggle.classList.toggle("is-open", isOpen);
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-});
+if (header && menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("nav-open");
+    document.body.classList.toggle("menu-open", isOpen);
+    menuToggle.classList.toggle("is-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
@@ -37,26 +42,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     scrollToAnchor(hash);
   });
 });
-
-if ("IntersectionObserver" in window) {
-  const journeyObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        }
-      });
-    },
-    { threshold: 0.28, rootMargin: "0px 0px -12% 0px" }
-  );
-
-  journeyCards.forEach((card, index) => {
-    card.style.transitionDelay = `${Math.min(index * 70, 280)}ms`;
-    journeyObserver.observe(card);
-  });
-} else {
-  journeyCards.forEach((card) => card.classList.add("is-visible"));
-}
 
 window.addEventListener("load", () => {
   if (window.location.hash) {
