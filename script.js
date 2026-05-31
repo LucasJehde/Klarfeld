@@ -89,8 +89,8 @@ function initGsap() {
 
   gsap.from(".audit-panel", {
     autoAlpha: 0,
-    y: 22,
-    duration: 0.72,
+    y: 16,
+    duration: 0.62,
     ease: "power2.out",
     delay: 0.18
   });
@@ -159,9 +159,9 @@ function initGsap() {
     document.querySelectorAll(".parallax-media img").forEach((image) => {
       gsap.fromTo(
         image,
-        { yPercent: -3 },
+        { yPercent: -2 },
         {
-          yPercent: 3,
+          yPercent: 2,
           ease: "none",
           scrollTrigger: {
             trigger: image.closest("section") || image,
