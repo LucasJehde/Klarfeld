@@ -8,8 +8,8 @@
   --soft: #747672;
   --line: rgba(243, 240, 232, 0.14);
   --line-strong: rgba(243, 240, 232, 0.22);
-  --gold: #c6a86a;
-  --gold-soft: rgba(198, 168, 106, 0.16);
+  --gold: #b99655;
+  --gold-soft: rgba(185, 150, 85, 0.16);
   --danger: #d79a64;
   --radius: 8px;
   --display: "Manrope", "Inter", Arial, sans-serif;
@@ -124,10 +124,20 @@ button {
   background: var(--gold);
 }
 
+.header-cta:hover,
+.btn-primary:hover {
+  background: #d0b174;
+}
+
 .btn-secondary {
   color: var(--ink);
   border: 1px solid var(--line);
   background: transparent;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(185, 150, 85, 0.5);
+  color: var(--gold);
 }
 
 .menu-toggle {
@@ -210,7 +220,7 @@ h3 {
   max-width: 620px;
   margin-top: 16px;
   padding-left: 16px;
-  border-left: 2px solid rgba(198, 168, 106, 0.5);
+  border-left: 2px solid rgba(185, 150, 85, 0.5);
   color: var(--ink);
   font-size: 16px;
   font-weight: 700;
@@ -296,8 +306,8 @@ h3 {
   gap: 6px;
   margin-top: 6px;
   padding: 12px;
-  background: rgba(198, 168, 106, 0.1);
-  border: 1px solid rgba(198, 168, 106, 0.24);
+  background: rgba(185, 150, 85, 0.1);
+  border: 1px solid rgba(185, 150, 85, 0.24);
   border-radius: var(--radius);
 }
 
@@ -515,7 +525,7 @@ h3 {
 
 .open-principles {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 34px;
   padding-top: 10px;
 }
@@ -552,7 +562,7 @@ h3 {
 
 .method {
   background:
-    linear-gradient(90deg, rgba(198, 168, 106, 0.08), transparent 48%),
+    linear-gradient(90deg, rgba(185, 150, 85, 0.08), transparent 48%),
     var(--bg);
 }
 
@@ -601,7 +611,7 @@ h3 {
   display: block;
   width: 100%;
   height: var(--rail-progress, 0%);
-  background: linear-gradient(var(--gold), rgba(198, 168, 106, 0.2));
+  background: linear-gradient(var(--gold), rgba(185, 150, 85, 0.2));
 }
 
 .rail-dot {
@@ -613,7 +623,7 @@ h3 {
   height: 12px;
   border-radius: 999px;
   background: var(--gold);
-  box-shadow: 0 0 0 6px rgba(198, 168, 106, 0.08), 0 0 18px rgba(198, 168, 106, 0.22);
+  box-shadow: 0 0 0 6px rgba(185, 150, 85, 0.08), 0 0 18px rgba(185, 150, 85, 0.22);
 }
 
 .rail-card {
@@ -629,7 +639,7 @@ h3 {
 .rail-card.is-active {
   opacity: 1;
   transform: translateX(3px);
-  border-color: rgba(198, 168, 106, 0.3);
+  border-color: rgba(185, 150, 85, 0.3);
   background: rgba(243, 240, 232, 0.055);
 }
 
@@ -778,14 +788,14 @@ h3 {
   min-height: 230px;
   padding: 26px;
   background:
-    linear-gradient(135deg, rgba(198, 168, 106, 0.06), transparent 42%),
+    linear-gradient(135deg, rgba(185, 150, 85, 0.06), transparent 42%),
     var(--bg);
   transition: background 180ms ease, border-color 180ms ease;
 }
 
 .service-row:hover {
   background:
-    linear-gradient(135deg, rgba(198, 168, 106, 0.085), transparent 46%),
+    linear-gradient(135deg, rgba(185, 150, 85, 0.085), transparent 46%),
     #0b0d10;
 }
 
@@ -844,7 +854,7 @@ h3 {
 
 .process {
   background:
-    linear-gradient(90deg, rgba(198, 168, 106, 0.075), transparent 55%),
+    linear-gradient(90deg, rgba(185, 150, 85, 0.075), transparent 55%),
     var(--bg);
 }
 
@@ -988,8 +998,8 @@ h3 {
 .final-cta {
   padding: 88px 0;
   background:
-    radial-gradient(circle at 12% 20%, rgba(198, 168, 106, 0.18), transparent 32%),
-    linear-gradient(90deg, rgba(198, 168, 106, 0.1), transparent 58%),
+    radial-gradient(circle at 12% 20%, rgba(185, 150, 85, 0.18), transparent 32%),
+    linear-gradient(90deg, rgba(185, 150, 85, 0.1), transparent 58%),
     #0a0b0e;
 }
 
@@ -1056,7 +1066,7 @@ h3 {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: rgba(198, 168, 106, 0.65);
+  border-color: rgba(185, 150, 85, 0.65);
 }
 
 .contact-form button {
@@ -1144,7 +1154,7 @@ h3 {
 .detail-cta {
   padding: 86px 0 96px;
   background:
-    linear-gradient(90deg, rgba(198, 168, 106, 0.08), transparent 54%),
+    linear-gradient(90deg, rgba(185, 150, 85, 0.08), transparent 54%),
     #0a0b0e;
   border-top: 1px solid var(--line);
 }
